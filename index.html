@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Feli Cunpleaños Diana</title>
   <style>
-    :root {
+    :root{
       --bg1:#050814;
       --bg2:#0b1030;
       --txt:#ffffff;
+      --glass: rgba(0,0,0,.30);
+      --border: rgba(255,255,255,.12);
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0}
@@ -18,7 +20,6 @@
       background: radial-gradient(1200px 800px at 50% 30%, #101a55 0%, var(--bg2) 35%, var(--bg1) 75%, #02040e 100%);
       color:var(--txt);
     }
-
     canvas{
       position:fixed; inset:0;
       width:100vw; height:100vh;
@@ -30,92 +31,67 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      pointer-events:none;
       padding:24px;
       text-align:center;
+      pointer-events:none;
     }
 
     .card{
-      pointer-events:none;
-      padding:18px 20px;
-      border-radius:18px;
-      background: rgba(0,0,0,.28);
-      border: 1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 20px 60px rgba(0,0,0,.45);
-      max-width: min(720px, 92vw);
+      width:min(760px, 92vw);
+      padding:20px 20px 18px;
+      border-radius:22px;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 24px 70px rgba(0,0,0,.55);
     }
 
     h1{
       margin:0;
-      font-size: clamp(28px, 5vw, 64px);
+      font-size: clamp(30px, 5vw, 66px);
       letter-spacing: .5px;
       line-height:1.05;
-      text-shadow: 0 6px 28px rgba(0,0,0,.6);
-      font-weight: 800;
+      font-weight: 900;
+      text-shadow: 0 8px 30px rgba(0,0,0,.65);
     }
 
-    .hint{
+    .sub{
       margin-top:10px;
-      font-size: clamp(12px, 2vw, 16px);
+      font-size: clamp(14px, 2.2vw, 18px);
+      opacity:.92;
+      line-height:1.5;
+    }
+
+    .msg{
+      margin:14px auto 0;
+      max-width: 680px;
+      font-size: clamp(14px, 2.1vw, 18px);
+      line-height: 1.7;
+      opacity:.94;
+    }
+
+    .sig{
+      margin-top:14px;
+      font-size: clamp(13px, 2vw, 16px);
       opacity:.85;
     }
 
-    .pillbar{
-      position:fixed;
-      left:50%;
-      bottom:18px;
-      transform:translateX(-50%);
-      display:flex;
-      gap:10px;
-      align-items:center;
-      pointer-events:auto;
-      padding:10px 12px;
+    .hint{
+      margin-top: 10px;
+      font-size: 13px;
+      opacity:.70;
+    }
+
+    /* pequeño brillo */
+    .shine{
+      display:inline-block;
+      padding: 2px 10px;
       border-radius:999px;
-      background: rgba(0,0,0,.30);
-      border: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(10px);
-    }
-
-    button{
-      appearance:none;
-      border: 1px solid rgba(255,255,255,.16);
       background: rgba(255,255,255,.08);
-      color: #fff;
-      padding: 10px 12px;
-      border-radius: 999px;
-      cursor:pointer;
-      font-weight: 600;
-      transition: transform .08s ease, background .15s ease, border-color .15s ease;
-      user-select:none;
-    }
-    button:hover{ background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.22); }
-    button:active{ transform: scale(.98); }
-
-    .toggle{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      font-size: 14px;
-      user-select:none;
-      cursor:pointer;
-    }
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      background:#66ff9c;
-      box-shadow: 0 0 18px rgba(102,255,156,.7);
-    }
-    .dot.off{
-      background:#ff6b6b;
-      box-shadow: 0 0 18px rgba(255,107,107,.7);
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .hint::after{ content:" (movimiento reducido)"; }
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      margin-top: 12px;
+      opacity: .9;
     }
   </style>
 </head>
@@ -125,11 +101,30 @@
   <div class="overlay" aria-hidden="true">
     <div class="card">
       <h1>Feli Cunpleaños Diana</h1>
-    
+
+      <div class="sub">
+        Hoy el cielo se prende para celebrar a la persona que hace mi vida más bonita.
+      </div>
+
+      <div class="msg">
+        Feliz cumpleaños, mi amor. <br><br>
+        Gracias por ser mi fuerza en los días difíciles, mi risa en los días normales y mi motivo en cada meta.
+        Te admiro por tu fuerza y por ser una gran guerrera , por tu corazón.
+        Deseo que este nuevo año te regale salud, sueños cumplidos, momentos hermosos  y razones de sobra para sonreír.<br><br>
+        Que nunca te falten abrazos sinceros y besos de nuestra parte y que nada ni nadie quite esa chispa que te hace única.
+        Yo estoy aquí, siempre, para celebrarte, apoyarte y amarte.
+      </div>
+
+      <div class="sig">
+        Con todo mi amor,<br>
+        Tu esposo 💛
+        RD Software 💛
+      </div>
+
+      <div class="shine">🎆 Fuegos artificiales en automático 🎇</div>
+      <div class="hint">Puedes tocar o hacer clic para lanzar más fuegos.</div>
     </div>
   </div>
-
-  
 
   <script>
     (() => {
@@ -138,7 +133,8 @@
 
       let w = 0, h = 0, dpr = 1;
 
-const prefersReducedMotion = false; // siempre animación + auto
+      // Forzar siempre en auto y con movimiento
+      const prefersReducedMotion = false;
 
       function resize() {
         dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
@@ -156,10 +152,7 @@ const prefersReducedMotion = false; // siempre animación + auto
       // Utilities
       const rand = (a, b) => a + Math.random() * (b - a);
       const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
-
-      function hsla(h, s, l, a) {
-        return `hsla(${h}, ${s}%, ${l}%, ${a})`;
-      }
+      const hsla = (h, s, l, a) => `hsla(${h}, ${s}%, ${l}%, ${a})`;
 
       // Particles
       const particles = [];
@@ -169,47 +162,47 @@ const prefersReducedMotion = false; // siempre animación + auto
       const gravity = 0.08;
       const air = 0.992;
 
-      function addParticle(p) { particles.push(p); }
-      function addRocket(r) { rockets.push(r); }
+      const addParticle = (p) => particles.push(p);
+      const addRocket = (r) => rockets.push(r);
 
       function burst(x, y, strength = 1) {
         const baseHue = rand(0, 360);
-        const count = Math.floor(rand(60, 110) * strength);
-        const sparkle = Math.random() < 0.35;
+        const count = Math.floor(rand(70, 130) * strength);
+        const sparkle = Math.random() < 0.38;
 
         for (let i = 0; i < count; i++) {
           const a = rand(0, Math.PI * 2);
-          const sp = rand(1.2, 4.8) * strength;
-          const hue = (baseHue + rand(-30, 30) + i * 0.3) % 360;
+          const sp = rand(1.2, 5.1) * strength;
+          const hue = (baseHue + rand(-30, 30) + i * 0.25) % 360;
 
           addParticle({
             x, y,
             vx: Math.cos(a) * sp,
             vy: Math.sin(a) * sp,
-            life: rand(45, 95),
+            life: rand(50, 110),
             maxLife: 0,
-            size: rand(1.2, 2.6) * (sparkle ? 1.1 : 1),
+            size: rand(1.2, 2.8) * (sparkle ? 1.1 : 1),
             hue,
-            sat: rand(70, 100),
-            lum: rand(55, 70),
+            sat: rand(75, 100),
+            lum: rand(55, 72),
             alpha: rand(0.75, 1),
             twinkle: sparkle && Math.random() < 0.55,
-            trail: Math.random() < 0.25
+            trail: Math.random() < 0.28
           });
         }
 
-        // ring
+        // ring extra
         if (Math.random() < 0.18 && !prefersReducedMotion) {
           const ringCount = Math.floor(90 * strength);
           for (let i = 0; i < ringCount; i++) {
             const a = (i / ringCount) * Math.PI * 2;
             addParticle({
               x, y,
-              vx: Math.cos(a) * rand(3.0, 5.0) * strength,
-              vy: Math.sin(a) * rand(3.0, 5.0) * strength,
-              life: rand(35, 70),
+              vx: Math.cos(a) * rand(3.0, 5.3) * strength,
+              vy: Math.sin(a) * rand(3.0, 5.3) * strength,
+              life: rand(40, 80),
               maxLife: 0,
-              size: rand(1.0, 2.0),
+              size: rand(1.0, 2.1),
               hue: (baseHue + 120) % 360,
               sat: 90,
               lum: 60,
@@ -225,7 +218,6 @@ const prefersReducedMotion = false; // siempre animación + auto
         const dx = toX - fromX;
         const dy = toY - fromY;
 
-        // Aim mostly upwards
         const vx = clamp(dx / 55, -3, 3);
         const vy = clamp(dy / 55, -8, -4);
 
@@ -241,22 +233,14 @@ const prefersReducedMotion = false; // siempre animación + auto
         });
       }
 
-      function clearScreen() {
-        ctx.clearRect(0, 0, w, h);
-        particles.length = 0;
-        rockets.length = 0;
-      }
-
       // Draw helpers
       function fade() {
-        // motion blur / persistence
         ctx.globalCompositeOperation = 'source-over';
         ctx.fillStyle = 'rgba(0,0,0,0.18)';
         ctx.fillRect(0, 0, w, h);
       }
 
       function drawParticle(p) {
-        // Trail line
         if (p.trail && !prefersReducedMotion) {
           ctx.beginPath();
           ctx.strokeStyle = hsla(p.hue, p.sat, p.lum, p.alpha * 0.45);
@@ -274,7 +258,6 @@ const prefersReducedMotion = false; // siempre animación + auto
       }
 
       function drawRocket(r) {
-        // Trail
         r.trail.push({ x: r.x, y: r.y });
         if (r.trail.length > 12) r.trail.shift();
 
@@ -290,7 +273,6 @@ const prefersReducedMotion = false; // siempre animación + auto
           ctx.stroke();
         }
 
-        // Rocket head
         ctx.beginPath();
         ctx.fillStyle = hsla(r.hue, 95, 65, 1);
         ctx.arc(r.x, r.y, 2.2, 0, Math.PI * 2);
@@ -305,7 +287,6 @@ const prefersReducedMotion = false; // siempre animación + auto
 
         fade();
 
-        // Rockets update
         for (let i = rockets.length - 1; i >= 0; i--) {
           const r = rockets[i];
           r.life += 1;
@@ -313,35 +294,28 @@ const prefersReducedMotion = false; // siempre animación + auto
           r.x += r.vx * (dt / 16);
           r.y += r.vy * (dt / 16);
 
-          // slight drag
           r.vx *= air;
           r.vy *= air;
-
-          // pull up-to-down
           r.vy += gravity * 0.35 * (dt / 16);
 
           drawRocket(r);
 
           const out = r.y < -40 || r.x < -40 || r.x > w + 40;
           if (r.life >= r.fuse || out) {
-            // explode
             burst(r.x, r.y, rand(0.9, 1.35));
             rockets.splice(i, 1);
           }
         }
 
-        // Particles update
         for (let i = particles.length - 1; i >= 0; i--) {
           const p = particles[i];
 
-          // physics
           p.x += p.vx * (dt / 16);
           p.y += p.vy * (dt / 16);
           p.vx *= air;
           p.vy *= air;
           p.vy += gravity * (dt / 16);
 
-          // life
           p.life -= 1;
           const lifeRatio = p.life / (p.maxLife || (p.maxLife = p.life + 1));
           p.alpha = clamp(lifeRatio, 0, 1);
@@ -357,7 +331,7 @@ const prefersReducedMotion = false; // siempre animación + auto
       }
       requestAnimationFrame(tick);
 
-      // Interaction
+      // Extra fireworks on click/tap
       function pointerPos(e) {
         if (e.touches && e.touches.length) return { x: e.touches[0].clientX, y: e.touches[0].clientY };
         return { x: e.clientX, y: e.clientY };
@@ -365,82 +339,34 @@ const prefersReducedMotion = false; // siempre animación + auto
 
       function onTap(e) {
         const { x, y } = pointerPos(e);
-        // Randomly decide rocket vs burst
-        if (Math.random() < 0.55 && !prefersReducedMotion) {
+        if (Math.random() < 0.55) {
           launchRocket(rand(w * 0.2, w * 0.8), h + 10, x, y);
           launchRocket(rand(w * 0.2, w * 0.8), h + 10, x + rand(-80, 80), y + rand(-30, 30));
         } else {
           burst(x, y, rand(0.9, 1.2));
         }
       }
-
       window.addEventListener('pointerdown', onTap, { passive: true });
 
-      // Controls
-      const btnBurst = document.getElementById('burst');
-      const btnRocket = document.getElementById('rocket');
-      const btnClear = document.getElementById('clear');
-      const autoToggle = document.getElementById('auto');
-      const autoDot = document.getElementById('autoDot');
-
-      btnBurst.addEventListener('click', (e) => {
-        e.stopPropagation();
-        burst(rand(w * 0.2, w * 0.8), rand(h * 0.15, h * 0.55), rand(1.0, 1.4));
-      });
-
-      btnRocket.addEventListener('click', (e) => {
-        e.stopPropagation();
-        launchRocket(rand(w * 0.2, w * 0.8), h + 10, rand(w * 0.2, w * 0.8), rand(h * 0.12, h * 0.5));
-      });
-
-      btnClear.addEventListener('click', (e) => {
-        e.stopPropagation();
-        clearScreen();
-      });
-
-      let auto = true;
-      function setAuto(v) {
-        auto = v;
-        autoDot.classList.toggle('off', !auto);
-        autoToggle.setAttribute('aria-pressed', String(auto));
-      }
-      setAuto(auto);
-
-      autoToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        setAuto(!auto);
-      });
-      autoToggle.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          setAuto(!auto);
-        }
-      });
-
-      // Auto fireworks
+      // AUTO (siempre encendido)
       function autoLoop() {
-        if (auto) {
-          const x = rand(w * 0.15, w * 0.85);
-          const y = rand(h * 0.12, h * 0.55);
-          if (Math.random() < 0.62 && !prefersReducedMotion) {
-            launchRocket(rand(w * 0.2, w * 0.8), h + 10, x, y);
-          } else {
-            burst(x, y, rand(0.9, 1.3));
-          }
+        const x = rand(w * 0.15, w * 0.85);
+        const y = rand(h * 0.12, h * 0.55);
+
+        if (Math.random() < 0.62) {
+          launchRocket(rand(w * 0.2, w * 0.8), h + 10, x, y);
+        } else {
+          burst(x, y, rand(0.9, 1.3));
         }
-        setTimeout(autoLoop, prefersReducedMotion ? 1400 : rand(520, 920));
+
+        setTimeout(autoLoop, rand(520, 920));
       }
       autoLoop();
 
-      // Initial celebratory bursts
-      if (!prefersReducedMotion) {
-        setTimeout(() => burst(w * 0.25, h * 0.25, 1.2), 350);
-        setTimeout(() => burst(w * 0.70, h * 0.30, 1.1), 650);
-        setTimeout(() => launchRocket(w * 0.55, h + 10, w * 0.55, h * 0.25), 900);
-      } else {
-        // Minimal motion: a couple of static bursts
-        setTimeout(() => burst(w * 0.5, h * 0.28, 0.9), 350);
-      }
+      // Arranque bonito
+      setTimeout(() => burst(w * 0.25, h * 0.25, 1.2), 350);
+      setTimeout(() => burst(w * 0.70, h * 0.30, 1.1), 650);
+      setTimeout(() => launchRocket(w * 0.55, h + 10, w * 0.55, h * 0.25), 900);
     })();
   </script>
 </body>
