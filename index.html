@@ -138,7 +138,7 @@
 
       let w = 0, h = 0, dpr = 1;
 
-      const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const prefersReducedMotion = false; // siempre animación + auto
 
       function resize() {
         dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
@@ -398,7 +398,7 @@
         clearScreen();
       });
 
-      let auto = !prefersReducedMotion;
+      let auto = true;
       function setAuto(v) {
         auto = v;
         autoDot.classList.toggle('off', !auto);
